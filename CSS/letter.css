@@ -1,0 +1,224 @@
+:root {
+    --shooting-star-path-y: 50em;
+}
+
+html {
+    font-size: 1em;
+}
+
+body {
+    margin: 0em;
+    background-color: black;
+}
+
+#parallax {
+    height: 100vh;
+    perspective: .0625em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#parallax::-webkit-scrollbar {
+    display: none;
+}
+
+#galaxy {
+    width: 110%;
+    position: absolute;
+    transform: translateZ(-.625em) scale(11);
+}
+
+.star-container {
+    top: 0;
+    width: 4.5em;
+    height: 4.5em;
+    display: inline-block;
+    margin: 1.25em;
+}
+
+.star {
+    position: absolute;
+    animation-name: star;
+    animation-iteration-count: infinite;
+}
+
+@keyframes star {
+    35% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+    65% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+#shooting-star {
+    top: 5em;
+    left: -10em;
+    position: absolute;
+    animation-name: shooting-star;
+    animation-duration: 1s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+}
+
+#shooting-star img {
+    rotate: 198deg;
+}
+
+@keyframes shooting-star {
+    to {
+        transform: translateX(200em) translateY(var(--shooting-star-path-y));
+    }  
+}
+
+.satellite {
+    top: 18.75em;
+    left: -18.75em;
+    height: 43.75em;
+    width: 43.75em;
+    position: absolute;
+    animation: satellite 30s infinite linear;
+}
+
+.satellite img {
+    rotate: 215deg;
+    animation: satellite 10s infinite linear;
+}
+
+@keyframes satellite {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.astronaut {
+    top: 10.625em;
+    left: 21.875em;
+    height: 43.75em;
+    width: 43.75em;
+    position: absolute;
+    animation: astronaut 30s infinite;
+}
+
+@keyframes astronaut {
+    0%, 100% {
+        transform: translateX(0em)
+    }
+    50% {
+        transform: translateX(6.25em);
+    }
+}
+
+.astronaut img {
+    width: 5em;
+    rotate: -15deg;
+    animation: astronaut-img 10s infinite;
+}
+
+@keyframes astronaut-img {
+    0%, 100% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+.moon {
+    top: 37.5em;
+    left: 490em;
+    position: absolute;
+    transform: translateZ(-0.375em) scale(10);
+}
+
+.moon img {
+    height: 22em;
+    width: 22em;
+    animation: moon 500s infinite linear;
+}
+
+@keyframes moon {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+#letter {
+    margin: 16em;
+    padding: 4em;
+    background-color: rgb(92, 92, 92, .1);
+    border-radius: 2em;
+    position: absolute;
+    transform: translateZ(0);
+}
+
+#letter button {
+    top: 1.875em;
+    left: 1.875em;
+    height: 1.25em;
+    width: 1.25em;
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgb(230, 230, 230);
+    border: 0;
+}
+
+#letter button:hover {
+    cursor: pointer;
+}
+
+#letter p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(230, 230, 230);
+    line-height: 1.75em;
+}
+
+.poem {
+    text-align: center;
+}
+
+#cover {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+}
+
+@keyframes cover {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#cover button {
+    margin-top: 45vh;
+    color: white;
+    background-color: rgb(92, 92, 92, .1);
+    padding: 1.25em;
+    border-radius: 2em;
+}
+
+#cover button:hover {
+    cursor: pointer;
+}
