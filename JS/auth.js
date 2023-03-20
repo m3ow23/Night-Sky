@@ -18,17 +18,17 @@ getAuth()
 const userUID = JSON.parse(localStorage.getItem('userUID'))
 if(!userUID) {
     window.location.href = 'index.html'
-    return
+} else {
+  localStorage.removeItem('userUID');
+  const dbRef = ref(getDatabase());
+  get(child(dbRef, userUID)).then((snapshot) => {
+    if (snapshot.exists()) {
+      document.getElementById('parallax')
+              .innerHTML += snapshot.val()['code']
+              
+      execute()
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
 }
-localStorage.removeItem('userUID');
-const dbRef = ref(getDatabase());
-get(child(dbRef, userUID)).then((snapshot) => {
-  if (snapshot.exists()) {
-    document.getElementById('parallax')
-            .innerHTML += snapshot.val()['code']
-            
-    execute()
-  }
-}).catch((error) => {
-  console.error(error);
-});
