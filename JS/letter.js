@@ -13,7 +13,7 @@ function execute() {
 
     for (let i = 0; i < 300; i++) {
         galaxy.innerHTML += "<div class=\"star-container\">" +
-                                "<img src=\"..\\assets\\star.png\" alt=\"star\" class=\"star\" " + randStyle() + ">" +
+                                "<img src=\"assets\\star.png\" alt=\"star\" class=\"star\" " + randStyle() + ">" +
                             "</div>"
     }
 
@@ -62,7 +62,7 @@ function flyToTheMoon() {
     website.msRequestFullscreen();
     }
 
-    var audio = new Audio('../assets/music.mp3')
+    var audio = new Audio('assets/music.mp3')
     audio.loop = true
     audio.play()
 
