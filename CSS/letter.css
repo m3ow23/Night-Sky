@@ -64,7 +64,7 @@ body {
 
 #shooting-star {
     top: 5em;
-    left: -10em;
+    left: -15em;
     position: absolute;
     animation-name: shooting-star;
     animation-duration: 1s;
